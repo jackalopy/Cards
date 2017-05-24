@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+.cardContainer {
+	animation: buyCard .4s; 
+}
+
+@keyframes buyCard {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+.card {
+	position: relative;
+	top: 0px;
+	width: 160px;
+	height: 200px;
+
+	background: #fff;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	overflow: hidden;
+
+	font-family: 'roboto';
+	text-align: left;
+	color: #fff;
+
+	transition: box-shadow .2s, top .2s;
+}
+
+.cardContainer:hover .card {
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	top: -5px;
+}
+
+.cardContainer:hover .content {
+	bottom: 0;
+}
+
+.card .card-back {
+	width: 100%;
+	height: 100%;
+	background-image: url(http://img08.deviantart.net/dc94/i/2016/291/d/8/magic__the_gathering_six_color_card_back_by_lordnyriox-dalfpib.png);
+	background-position: center;
+	background-size: cover;
+}
+
+.card .img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.card .content {
+	position: absolute;
+	bottom: -100%;
+	width: 100%;
+	padding: 4px;
+	font-family: 'Roboto';
+
+	transition: bottom .2s;
+	background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.25));
+}
+
+.card .content .title{
+	margin: .3em 0;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.card .content .desc{
+	margin: 0;
+	font-size: 10px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.optionsContainer {
+	position: absolute;
+	bottom: 205px;
+	width: 160px;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+
+	transition: opacity .2s;
+	transition-delay: .2s;
+}
+
+.options {
+	display: inline-block;
+	padding: 3px 5px;
+	
+	background-color: #333;
+	list-style: none;
+	font-size: 12px;
+	font-weight: 300;
+	text-align: center;
+	color: #eee;
+	border-radius: 3px;
+}
+
+.options:after {
+	content: '';
+	
+	position: absolute;
+	bottom: 7px;
+	margin-left: -2.5px;
+	border-top: solid 5px #333;
+	border-left: solid 5px transparent;
+	border-right: solid 5px transparent;
+}
+
+.options .option {
+	display: block;
+	width: auto;
+	padding: 2px 10px;
+	border-bottom: solid 1px #555;
+	cursor: pointer;
+}
+
+.options .option:last-child {
+	border: none;
+}
+
+.cardContainer:hover .optionsContainer {
+	opacity: 1;
+	pointer-events: auto;
+}

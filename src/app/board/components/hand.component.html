@@ -1,0 +1,9 @@
+<div class="hand">
+	<card *ngFor="let card of cardList"
+	[open]="open"
+	[title]="card.title"
+	[imgsrc]="card.imgsrc"
+	[desc]="card.desc"
+	[options]="card.options"
+	(click)="addCard(card)"></card>
+</div>
