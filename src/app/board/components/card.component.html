@@ -1,11 +1,15 @@
 <div class="cardContainer">
 	<div class="card" *ngIf="open">
 		<div class="img" [ngStyle]="{'background-image': 'url(' + imgsrc + ')'}"></div>
-		<div class="content">
+		<div class="topContainer">
+			<h1 class="title">{{ title }}</h1>
+			<p class="cost">{{ desc }}</p>
+		</div>
+		<div class="bottomContainer">
 			<h1 class="title">{{ title }}</h1>
 			<p class="desc">{{ desc }}</p>
-		</div>
-	</div>
+		</div
+>	</div>
 	<div class="optionsContainer">
 		<ul class="options" *ngIf="open">
 			<li class="option" *ngFor="let option of options" (click)="option.action()" >

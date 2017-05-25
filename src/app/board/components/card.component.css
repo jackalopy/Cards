@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 .cardContainer {
+	position: relative;
 	animation: buyCard .4s; 
 }
 
@@ -16,11 +17,12 @@
 .card {
 	position: relative;
 	top: 0px;
-	width: 160px;
-	height: 200px;
+	width: 144px;
+	height: 205px;
 
 	background: #fff;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+	border: solid 3px black;
 	border-radius: 3px;
 	overflow: hidden;
 
@@ -36,7 +38,7 @@
 	top: -5px;
 }
 
-.cardContainer:hover .content {
+.cardContainer:hover .bottomContainer {
 	bottom: 0;
 }
 
@@ -58,7 +60,7 @@
 	background-size: cover;
 }
 
-.card .content {
+.card .bottomContainer {
 	position: absolute;
 	bottom: -100%;
 	width: 100%;
@@ -69,13 +71,13 @@
 	background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.25));
 }
 
-.card .content .title{
+.card .bottomContainer .title{
 	margin: .3em 0;
 	font-size: 14px;
 	font-weight: 300;
 }
 
-.card .content .desc{
+.card .bottomContainer .desc{
 	margin: 0;
 	font-size: 10px;
 	font-weight: 400;
@@ -84,8 +86,10 @@
 
 .optionsContainer {
 	position: absolute;
-	bottom: 205px;
-	width: 160px;
+	bottom: 215px;
+	left: 3px;
+	width: 144px;
+	
 	text-align: center;
 	opacity: 0;
 	pointer-events: none;

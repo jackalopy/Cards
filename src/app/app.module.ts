@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing , appRoutingProviders} from './app.routing';
 import { FormsModule } from "@angular/forms";
+import { HttpModule, JsonpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import { TaskListComponent } from "./todo/components/task-list.component";
@@ -18,6 +19,8 @@ import { CardComponent } from "./board/components/card.component";
         BrowserModule,
         CommonModule,
         FormsModule,
+        HttpModule,
+        JsonpModule,
         routing
     ],
     declarations: [

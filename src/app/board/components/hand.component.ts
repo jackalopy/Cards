@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { CardComponent } from "./card.component";
+// import { mtgsdk } from '../../../lib/mtgsdk/src/index.js';
 
 @Component({
 	selector: 'hand',
@@ -17,7 +18,7 @@ export class HandComponent {
 		console.log('hand loaded');
 		this.cardList = [{
 			title: 'Título 1',
-			imgsrc: 'http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/daily/rc/rc190_dru.jpg',
+			imgsrc: 'http://magiccards.info/scans/en/ktk/190.jpg',
 			desc: 'descrição 1',
 			options: [{
 				icon: 'info',
@@ -73,9 +74,15 @@ export class HandComponent {
 				}
 			}]
 		}];
+
+		// mtgsdk.card.find(3).then(result => {
+		// 	console.log(result.card.name); // "Black Lotus"
+		// });
 	}
 
 	addCard = function (card: Object): void {
-		this.cardList.push(card);
+		if (this.open) {
+			this.cardList.push(card);
+		}
 	};
 }
